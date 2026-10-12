@@ -20,6 +20,7 @@ def caesar_cipher(text: str, shift: int) -> str:
 
     return "".join(result)
 
+
 def main():
     print("=== Шифр Цезаря ===")
     user_text = input("Введите текст: ")
@@ -36,3 +37,14 @@ def main():
     # Расшифрование (обратный сдвиг)
     decrypted = caesar_cipher(encrypted, -shift_key)
     print(f"Расшифрованный текст: {decrypted}")
+
+
+if __name__ == "__main__":
+    # Быстрые тесты из задания
+    assert caesar_cipher("ABC XYZ", 3) == "DEF ABC"
+    assert caesar_cipher("xyz", 3) == "abc"
+    assert caesar_cipher("Python!", 0) == "Python!"
+    assert caesar_cipher("abc", -1) == "zab"
+    print("Все встроенные тесты пройдены успешно!\n")
+
+    main()
