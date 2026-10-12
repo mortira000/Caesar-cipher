@@ -19,3 +19,20 @@ def caesar_cipher(text: str, shift: int) -> str:
             result.append(char)
 
     return "".join(result)
+
+def main():
+    print("=== Шифр Цезаря ===")
+    user_text = input("Введите текст: ")
+    try:
+        shift_key = int(input("Введите ключ (целое число сдвига): "))
+    except ValueError:
+        print("Ошибка: ключ должен быть целым числом.")
+        return
+
+    # Зашифрование
+    encrypted = caesar_cipher(user_text, shift_key)
+    print(f"Зашифрованный текст: {encrypted}")
+
+    # Расшифрование (обратный сдвиг)
+    decrypted = caesar_cipher(encrypted, -shift_key)
+    print(f"Расшифрованный текст: {decrypted}")
